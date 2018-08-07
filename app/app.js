@@ -19,6 +19,7 @@ $( document ).ready(function(){
                 $('.messages').html("")
             }else{
                 $('.messages').html("There was an error")
+                cleanUp()
             }
         }else{
             $('.messages').html("Error: Enter at least 4 values")
