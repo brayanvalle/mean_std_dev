@@ -11,6 +11,7 @@ $( document ).ready(function(){
             console.log(result)
             if(result == 0){
                 $('.messages').html("There was an error")
+                cleanUp()
                 return
             }
             if(result.mean != 'NaN' && result.std_deviation != 'NaN'){
