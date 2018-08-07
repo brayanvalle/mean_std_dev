@@ -20,9 +20,9 @@ $( document ).ready(function(){
     });
 
     function cleanUp(){
-        $('#result_count').html(0)
-        $('#result_mean').html(0)
-        $('#result_std_deviation').html(0)
+        $('#result_count').html("")
+        $('#result_mean').html("")
+        $('#result_std_deviation').html("")
     }
 
     function addResult(result){
