@@ -6,9 +6,13 @@ $( document ).ready(function(){
     $('#calculate').click(function(){
         data = $('#input_numbers').val()
         _data = separateData(data)
-        if(_data.length > 4){
+        if(_data.length > 3){
             result = calculate(_data)
             
+            if(result == 0){
+                $('.messages').html("There was an error")
+                return
+            }
             if(result.mean != 'NaN' && result.std_deviation != 'NaN'){
                 addResult(result)
                 $('.messages').html("")
