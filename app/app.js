@@ -8,7 +8,7 @@ $( document ).ready(function(){
         _data = separateData(data)
         if(_data.length > 3){
             result = calculate(_data)
-            
+            console.log(result)
             if(result == 0){
                 $('.messages').html("There was an error")
                 return
@@ -16,6 +16,8 @@ $( document ).ready(function(){
             if(result.mean != 'NaN' && result.std_deviation != 'NaN'){
                 addResult(result)
                 $('.messages').html("")
+            }else{
+                $('.messages').html("There was an error")
             }
         }else{
             $('.messages').html("Error: Enter at least 4 values")
@@ -39,14 +41,14 @@ $( document ).ready(function(){
     function calculate(data){
         
 
-        if(_data == 0)
+        if(data == 0)
             return "Error"
         else{
-            mean = calculateMean(_data)
-            std_deviation = calculateStandardDeviation(_data)
+            mean = calculateMean(data)
+            std_deviation = calculateStandardDeviation(data)
 
             return response = ({
-                    'count' : _data.length,
+                    'count' : data.length,
                     'mean' : mean,
                     'std_deviation' : std_deviation
             });
