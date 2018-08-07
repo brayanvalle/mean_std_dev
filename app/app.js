@@ -1,19 +1,31 @@
 $(document).ready(function() {
 
     var _data = []
-    var _data = '186,699,132,272,291,331,199,1890,788,1601'
-
+    var i = 0
     $('#calculate').click(function() {
          data = $('#input_numbers').val()
+         calculate(data)
+    });
+
+    $('#exc_test').click(function(){
+        
+        test();
+    });
+
+
+    function calculate(data){
+       
         _data = separateData(data)
         if (_data.length > 3) {
-            result = calculate(_data)
-            console.log(result)
-            if (result == 0) {
-                $('.messages').html("There was an error")
-                cleanUp()
-                return
-            }
+            mean = calculateMean(_data)
+            std_deviation = calculateStandardDeviation(_data)
+
+            result = ({
+                'count': _data.length,
+                'mean': mean,
+                'std_deviation': std_deviation
+            });     
+
             if (result.mean != 'NaN' && result.std_deviation != 'NaN') {
                 addResult(result)
                 $('.messages').html("")
@@ -25,7 +37,7 @@ $(document).ready(function() {
             $('.messages').html("Error: Enter at least 4 values")
             cleanUp()
         }
-    });
+    }
 
     function cleanUp() {
         $('#result_count').html("")
@@ -40,23 +52,6 @@ $(document).ready(function() {
     }
 
 
-    function calculate(data) {
-
-
-        if (data == 0)
-            return "Error"
-        else {
-            mean = calculateMean(data)
-            std_deviation = calculateStandardDeviation(data)
-
-            return response = ({
-                'count': data.length,
-                'mean': mean,
-                'std_deviation': std_deviation
-            });
-        }
-
-    }
 
     function calculateMean(_data) {
         return (_data.reduce((a, b) => a + b, 0) / _data.length).toFixed(2)
@@ -82,8 +77,25 @@ $(document).ready(function() {
             return data.split(",").map(Number)
     }
 
-    function print(x) {
-        console.log(x)
+
+    function test()
+    {
+        var data1 = '160,591,114,229,230,270,128,1657,624,1503';
+        var data2 = '15.0,69.9,6.5,22.4,28.4,65.9,19.4,198.7,38.8,138.2';
+        var data3 = '186,699,132,272,291,331,199,1890,788,1601';
+        _test = [
+            data1,
+            data2,
+            data3
+        ]        
+        $('#input_numbers').val(_test[i])
+        calculate(_test[i])
+        if(i < (_test.length - 1 ))
+            i++
+        else 
+            i = 0
     }
+
+
 
 });

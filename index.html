@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="assets/main.css">
 
@@ -33,31 +32,32 @@
                     </div>
                 </div>
                 <button class="btn btn-primary" id="calculate">Calculate</button>
+                <button class="btn btn-primary" id="exc_test">Execute tests</button>
             </div>
 
             <div class="card-footer">
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
-                        <p>Result:</p>
+                        <p>Result</p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
-                            <table class="table">
-                                <caption>Made by Brayan Valle</caption>
-                                <thead>
-                                    <tr >
-                                        <th scope="col" >Count</th>
-                                        <th scope="col">Mean</th>
-                                        <th scope="col">Standard deviation</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <td id= "result_count"></td>
-                                    <td id= "result_mean"></td>
-                                    <td id= "result_std_deviation"></td>
-                                </tbody>
+                        <table class="table">
+                            <caption>Made by Brayan Valle</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Count</th>
+                                    <th scope="col">Mean</th>
+                                    <th scope="col">Standard deviation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td id="result_count"></td>
+                                <td id="result_mean"></td>
+                                <td id="result_std_deviation"></td>
+                            </tbody>
                     </div>
                 </div>
             </div>
@@ -65,29 +65,26 @@
     </div>
 
     <script>
-   function isNumber(evt) {
-    evt = (evt) ? evt : window.event;
-    var charCode = (evt.which) ? evt.which : evt.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-    		if(charCode == 46 || charCode == 44)
-        	return true
-        else
-        	return false;
-    }
-    return true;
-}
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                if (charCode == 46 || charCode == 44)
+                    return true
+                else
+                    return false;
+            }
+            return true;
+        }
     </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-        <script src="app/app.js"></script>
-        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="app/app.js"></script>
+
 </body>
 
 </html>
